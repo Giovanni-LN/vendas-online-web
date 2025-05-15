@@ -9,7 +9,12 @@
   },
   "[javascript]": {
     "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": ["source.addMissingImports", "source.organizeImports", "source.fixAll.stylelint", "source.fixAll.eslint"],
+    "editor.codeActionsOnSave": [
+      "source.addMissingImports",
+      "source.organizeImports",
+      "source.fixAll.stylelint",
+      "source.fixAll.eslint"
+    ],
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[javascriptreact]": {
@@ -28,7 +33,11 @@
   "workbench.editor.showTabs": "multiple",
   "explorer.confirmDelete": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command", "stash-push:command"],
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "switch:command",
+    "stash-push:command"
+  ],
   "workbench.editor.highlightModifiedTabs": true,
   "files.trimFinalNewlines": true,
   "editor.fontSize": 13,
