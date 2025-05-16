@@ -1,7 +1,6 @@
 import LoginScrenn from './modules';
 
 function App() {
-  
   return <LoginScrenn />;
 }
 

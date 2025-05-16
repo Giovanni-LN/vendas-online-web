@@ -1,4 +1,4 @@
-import Input from '../../../shared/inputs/input/Input.tsx';
+import Input from '../../../shared/inputs/input/Input';
 import {
   BackgroundImage,
   ContainerLogin,

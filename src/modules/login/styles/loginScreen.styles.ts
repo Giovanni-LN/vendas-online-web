@@ -22,7 +22,7 @@ export const ContainerLogin = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:rgb(217, 217, 217);
+  background-color: #d9d9d9;
   padding: 22px;
   width: 100%;
   height: 100vh;
