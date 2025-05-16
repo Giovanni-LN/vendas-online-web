@@ -1,4 +1,5 @@
-import { Input as InputAntd, InputProps as InputPropsAntd } from 'antd';
+import type { InputProps as InputPropsAntd } from 'antd';
+import { Input as InputAntd } from 'antd';
 
 import { BoxInput, TitleInput } from './input.styles';
 
