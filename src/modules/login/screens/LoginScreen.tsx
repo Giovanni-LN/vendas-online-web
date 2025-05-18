@@ -1,10 +1,10 @@
-import Input from '../../../shared/inputs/input/Input';
+import Input from '../../../shared/components/inputs/input/Input';
 import {
-  BackgroundImage,
-  ContainerLogin,
-  ContainerLoginScreen,
-  LimitedContainer,
-  LogoImage,
+    BackgroundImage,
+    ContainerLogin,
+    ContainerLoginScreen,
+    LimitedContainer,
+    LogoImage,
 } from '../styles/loginScreen.styles';
 
 const LoginScreen = () => {
