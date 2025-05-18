@@ -10,11 +10,16 @@
     "lint:fix": "npx eslint ./src --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
+    "@remix-run/router": "^1.23.0",
     "@types/styled-components": "^5.1.34",
     "antd": "^5.25.1",
     "axios": "^1.9.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^8.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0",
+    "sort-by": "^0.0.2",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
