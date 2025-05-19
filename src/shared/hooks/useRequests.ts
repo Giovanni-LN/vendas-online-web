@@ -7,15 +7,13 @@ import { ERROR_INVALID_PASSWORD } from '../constants/errosStatus';
 import { URL_AUTH } from '../constants/urls';
 import { setAuthorizationToken } from '../functions/connection/auth';
 import type { MethodType } from '../functions/connection/connectionAPI';
-import ConnectionAPI, {
-  connectionAPIPost
-} from '../functions/connection/connectionAPI';
+import ConnectionAPI, { connectionAPIPost } from '../functions/connection/connectionAPI';
 import { useGlobalContext } from './useGlobalContext';
 
 export const useRequests = () => {
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const { setNotification, setUser } = useGlobalContext();
+  const navigate = useNavigate();
 
   const request = async <T>(
     url: string,
