@@ -4,11 +4,7 @@ import { loginRoutes } from './modules/login/routes';
 import { productScreens } from './modules/product/routes';
 import { useNotification } from './shared/hooks/useNotification';
 
-const router = createBrowserRouter([
-  ...firstScreenRoutes,
-  ...loginRoutes,
-  ...productScreens,
-]);
+const router = createBrowserRouter([...firstScreenRoutes, ...loginRoutes, ...productScreens]);
 
 function App() {
   const { contextHolder } = useNotification();
