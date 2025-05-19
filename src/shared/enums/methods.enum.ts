@@ -6,4 +6,4 @@ export const MethodsEnum = {
   PUT: 'PUT',
 } as const;
 
-export type MethodsEnum = typeof MethodsEnum[keyof typeof MethodsEnum];
+export type MethodsEnum = (typeof MethodsEnum)[keyof typeof MethodsEnum];

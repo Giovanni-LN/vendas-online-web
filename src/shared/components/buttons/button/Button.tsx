@@ -7,6 +7,7 @@ interface ButtonCurrentProps extends ButtonProps {
 }
 
 const Button = ({ margin, ...props }: ButtonCurrentProps) => {
+  console.log('Botão renderizado', props);
   return <ButtonAntd style={{ margin }} {...props} />;
 };
 
