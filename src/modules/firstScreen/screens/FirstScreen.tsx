@@ -32,7 +32,7 @@ const FirstScreen = () => {
     };
 
     verifyToken();
-  },);
+  });
 
   return <Spin />;
 };
