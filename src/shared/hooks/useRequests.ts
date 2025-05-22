@@ -1,19 +1,20 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import type { AuthType } from '../../modules/login/types/AuthType';
-import { ProductRoutesEnum } from '../../modules/product/routes';
 import { ERROR_INVALID_PASSWORD } from '../constants/errosStatus';
 import { URL_AUTH } from '../constants/urls';
 import { setAuthorizationToken } from '../functions/connection/auth';
-import type { MethodType } from '../functions/connection/connectionAPI';
-import ConnectionAPI, { connectionAPIPost } from '../functions/connection/connectionAPI';
+import type {
+  MethodType,
+} from '../functions/connection/connectionAPI';
+import ConnectionAPI, {
+  connectionAPIPost
+} from '../functions/connection/connectionAPI';
 import { useGlobalContext } from './useGlobalContext';
 
 export const useRequests = () => {
   const [loading, setLoading] = useState(false);
   const { setNotification, setUser } = useGlobalContext();
-  const navigate = useNavigate();
 
   const request = async <T>(
     url: string,
@@ -47,7 +48,7 @@ export const useRequests = () => {
       .then((result) => {
         setUser(result.user);
         setAuthorizationToken(result.accessToken);
-        navigate(ProductRoutesEnum.PRODUCT);
+        location.href = '/';
         return result;
       })
       .catch(() => {
