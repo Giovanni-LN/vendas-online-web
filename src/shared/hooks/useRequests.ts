@@ -9,11 +9,11 @@ import { setAuthorizationToken } from '../functions/connection/auth';
 import type { MethodType } from '../functions/connection/connectionAPI';
 import ConnectionAPI, { connectionAPIPost } from '../functions/connection/connectionAPI';
 
-import { useGlobalContext } from './useGlobalContext';
+import { useGlobalReducer } from '../../store/reducers/globalReducer/useGlobalReducer';
 
 export const useRequests = () => {
   const [loading, setLoading] = useState(false);
-  const { setNotification, setUser } = useGlobalContext();
+  const { setNotification, setUser } = useGlobalReducer();
 
   const request = async <T>(
     url: string,
