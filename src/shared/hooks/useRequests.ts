@@ -1,15 +1,14 @@
 import { useState } from 'react';
+import type { NavigateFunction } from 'react-router-dom';
 
+import { FirstScreenRoutesEnum } from '../../modules/firstScreen/routes';
 import type { AuthType } from '../../modules/login/types/AuthType';
 import { ERROR_INVALID_PASSWORD } from '../constants/errosStatus';
 import { URL_AUTH } from '../constants/urls';
 import { setAuthorizationToken } from '../functions/connection/auth';
-import type {
-  MethodType,
-} from '../functions/connection/connectionAPI';
-import ConnectionAPI, {
-  connectionAPIPost
-} from '../functions/connection/connectionAPI';
+import type { MethodType } from '../functions/connection/connectionAPI';
+import ConnectionAPI, { connectionAPIPost } from '../functions/connection/connectionAPI';
+
 import { useGlobalContext } from './useGlobalContext';
 
 export const useRequests = () => {
@@ -41,14 +40,14 @@ export const useRequests = () => {
     return returnObject;
   };
 
-  const authRequest = async (body: unknown): Promise<void> => {
+  const authRequest = async (navigate: NavigateFunction, body: unknown): Promise<void> => {
     setLoading(true);
 
     await connectionAPIPost<AuthType>(URL_AUTH, body)
       .then((result) => {
         setUser(result.user);
         setAuthorizationToken(result.accessToken);
-        location.href = '/';
+        navigate(FirstScreenRoutesEnum.FIRST_SCREEN);
         return result;
       })
       .catch(() => {
