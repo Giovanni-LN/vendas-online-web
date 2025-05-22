@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { URL_CATEGORY } from '../../../shared/constants/urls';
 import { MethodsEnum } from '../../../shared/enums/methods.enum';
-import { useDataContext } from '../../../shared/hooks/useDataContext';
 import { useRequests } from '../../../shared/hooks/useRequests';
+import { useCategoryReducer } from '../../../store/reducers/categoryReducer/useCategoryReducer';
 
 export const useCategory = () => {
-  const { categories, setCategories } = useDataContext();
+  const { categories, setCategories } = useCategoryReducer();
   const [categoriesFiltered, setCategoriesFiltered] = useState(categories);
   const { request } = useRequests();
 
@@ -14,7 +14,7 @@ export const useCategory = () => {
     if (!categories || categories.length === 0) {
       request(URL_CATEGORY, MethodsEnum.GET, setCategories);
     }
-  });
+  }, []);
 
   useEffect(() => {
     setCategoriesFiltered([...categories]);
